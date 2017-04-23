@@ -1,0 +1,508 @@
+<svg height="8078" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="8078" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26">122 megabytes installed</tspan>
+<tspan x="10" y="42"></tspan>
+<tspan x="10" y="58">node_modules</tspan>
+<tspan x="10" y="74">└─┬ plotly.js@1.26.1 </tspan>
+<tspan x="10" y="90">  ├─┬ 3d-view@2.0.0 </tspan>
+<tspan x="10" y="106">  │ ├─┬ orbit-camera-controller@4.0.0 </tspan>
+<tspan x="10" y="122">  │ │ └─┬ filtered-vector@1.2.4 </tspan>
+<tspan x="10" y="138">  │ │   └── cubic-hermite@1.0.0 </tspan>
+<tspan x="10" y="154">  │ └── turntable-camera-controller@3.0.1 </tspan>
+<tspan x="10" y="170">  ├─┬ alpha-shape@1.0.0 </tspan>
+<tspan x="10" y="186">  │ ├─┬ alpha-complex@1.0.0 </tspan>
+<tspan x="10" y="202">  │ │ └─┬ circumradius@1.0.0 </tspan>
+<tspan x="10" y="218">  │ │   └── circumcenter@1.0.0 </tspan>
+<tspan x="10" y="234">  │ └─┬ simplicial-complex-boundary@1.0.1 </tspan>
+<tspan x="10" y="250">  │   ├─┬ boundary-cells@2.0.1 </tspan>
+<tspan x="10" y="266">  │   │ └─┬ tape@4.6.3 </tspan>
+<tspan x="10" y="282">  │   │   ├── defined@1.0.0 </tspan>
+<tspan x="10" y="298">  │   │   ├─┬ for-each@0.3.2 </tspan>
+<tspan x="10" y="314">  │   │   │ └── is-function@1.0.1 </tspan>
+<tspan x="10" y="330">  │   │   ├── function-bind@1.1.0 </tspan>
+<tspan x="10" y="346">  │   │   ├─┬ glob@7.1.1 </tspan>
+<tspan x="10" y="362">  │   │   │ ├── fs.realpath@1.0.0 </tspan>
+<tspan x="10" y="378">  │   │   │ ├── inflight@1.0.6 </tspan>
+<tspan x="10" y="394">  │   │   │ ├─┬ minimatch@3.0.3 </tspan>
+<tspan x="10" y="410">  │   │   │ │ └─┬ brace-expansion@1.1.7 </tspan>
+<tspan x="10" y="426">  │   │   │ │   ├── balanced-match@0.4.2 </tspan>
+<tspan x="10" y="442">  │   │   │ │   └── concat-map@0.0.1 </tspan>
+<tspan x="10" y="458">  │   │   │ ├── once@1.4.0 </tspan>
+<tspan x="10" y="474">  │   │   │ └── path-is-absolute@1.0.1 </tspan>
+<tspan x="10" y="490">  │   │   ├── object-inspect@1.2.2 </tspan>
+<tspan x="10" y="506">  │   │   ├── resumer@0.0.0 </tspan>
+<tspan x="10" y="522">  │   │   └─┬ string.prototype.trim@1.1.2 </tspan>
+<tspan x="10" y="538">  │   │     ├── define-properties@1.1.2 </tspan>
+<tspan x="10" y="554">  │   │     └─┬ es-abstract@1.7.0 </tspan>
+<tspan x="10" y="570">  │   │       ├─┬ es-to-primitive@1.1.1 </tspan>
+<tspan x="10" y="586">  │   │       │ ├── is-date-object@1.0.1 </tspan>
+<tspan x="10" y="602">  │   │       │ └── is-symbol@1.0.1 </tspan>
+<tspan x="10" y="618">  │   │       ├── is-callable@1.1.3 </tspan>
+<tspan x="10" y="634">  │   │       └── is-regex@1.0.4 </tspan>
+<tspan x="10" y="650">  │   └─┬ reduce-simplicial-complex@1.0.0 </tspan>
+<tspan x="10" y="666">  │     ├── cell-orientation@1.0.1 </tspan>
+<tspan x="10" y="682">  │     ├── compare-cell@1.0.0 </tspan>
+<tspan x="10" y="698">  │     └── compare-oriented-cell@1.0.1 </tspan>
+<tspan x="10" y="714">  ├─┬ color-rgba@1.1.0 </tspan>
+<tspan x="10" y="730">  │ ├── clamp@1.0.1 </tspan>
+<tspan x="10" y="746">  │ ├─┬ color-parse@1.3.2 </tspan>
+<tspan x="10" y="762">  │ │ ├── color-name@1.1.2 </tspan>
+<tspan x="10" y="778">  │ │ └── is-plain-obj@1.1.0 </tspan>
+<tspan x="10" y="794">  │ └─┬ color-space@1.14.7 </tspan>
+<tspan x="10" y="810">  │   ├── husl@5.0.3 </tspan>
+<tspan x="10" y="826">  │   └─┬ mumath@3.3.4 </tspan>
+<tspan x="10" y="842">  │     └── almost-equal@1.1.0 </tspan>
+<tspan x="10" y="858">  ├─┬ convex-hull@1.0.3 </tspan>
+<tspan x="10" y="874">  │ ├── affine-hull@1.0.0 </tspan>
+<tspan x="10" y="890">  │ ├─┬ incremental-convex-hull@1.0.1 </tspan>
+<tspan x="10" y="906">  │ │ └── simplicial-complex@1.0.0 </tspan>
+<tspan x="10" y="922">  │ └── monotone-convex-hull-2d@1.0.1 </tspan>
+<tspan x="10" y="938">  ├── country-regex@1.1.0 </tspan>
+<tspan x="10" y="954">  ├── d3@3.5.17 </tspan>
+<tspan x="10" y="970">  ├─┬ delaunay-triangulate@1.1.6 </tspan>
+<tspan x="10" y="986">  │ └── uniq@1.0.1 </tspan>
+<tspan x="10" y="1002">  ├── es6-promise@3.3.1 </tspan>
+<tspan x="10" y="1018">  ├── fast-isnumeric@1.1.1 </tspan>
+<tspan x="10" y="1034">  ├─┬ gl-contour2d@1.1.3 </tspan>
+<tspan x="10" y="1050">  │ ├── binary-search-bounds@2.0.3 </tspan>
+<tspan x="10" y="1066">  │ ├─┬ cdt2d@1.0.0 </tspan>
+<tspan x="10" y="1082">  │ │ ├── binary-search-bounds@2.0.3 </tspan>
+<tspan x="10" y="1098">  │ │ └── robust-in-sphere@1.1.3 </tspan>
+<tspan x="10" y="1114">  │ ├─┬ clean-pslg@1.1.2 </tspan>
+<tspan x="10" y="1130">  │ │ ├─┬ big-rat@1.0.4 </tspan>
+<tspan x="10" y="1146">  │ │ │ ├── bn.js@4.11.6 </tspan>
+<tspan x="10" y="1162">  │ │ │ └── double-bits@1.1.1 </tspan>
+<tspan x="10" y="1178">  │ │ ├── box-intersect@1.0.1 </tspan>
+<tspan x="10" y="1194">  │ │ ├── nextafter@1.0.0 </tspan>
+<tspan x="10" y="1210">  │ │ ├── rat-vec@1.1.1 </tspan>
+<tspan x="10" y="1226">  │ │ ├── robust-segment-intersect@1.0.1 </tspan>
+<tspan x="10" y="1242">  │ │ └── union-find@1.0.2 </tspan>
+<tspan x="10" y="1258">  │ ├── gl-buffer@2.1.2 </tspan>
+<tspan x="10" y="1274">  │ ├─┬ glslify@4.0.0 </tspan>
+<tspan x="10" y="1290">  │ │ ├─┬ bl@1.2.0 </tspan>
+<tspan x="10" y="1306">  │ │ │ └─┬ readable-stream@2.2.9 </tspan>
+<tspan x="10" y="1322">  │ │ │   ├── buffer-shims@1.0.0 </tspan>
+<tspan x="10" y="1338">  │ │ │   ├── core-util-is@1.0.2 </tspan>
+<tspan x="10" y="1354">  │ │ │   ├── isarray@1.0.0 </tspan>
+<tspan x="10" y="1370">  │ │ │   ├── process-nextick-args@1.0.7 </tspan>
+<tspan x="10" y="1386">  │ │ │   ├── string_decoder@1.0.0 </tspan>
+<tspan x="10" y="1402">  │ │ │   └── util-deprecate@1.0.2 </tspan>
+<tspan x="10" y="1418">  │ │ ├─┬ glsl-resolve@0.0.1 </tspan>
+<tspan x="10" y="1434">  │ │ │ ├── resolve@0.6.3 </tspan>
+<tspan x="10" y="1450">  │ │ │ └── xtend@2.2.0 </tspan>
+<tspan x="10" y="1466">  │ │ ├─┬ glslify-bundle@4.0.1 </tspan>
+<tspan x="10" y="1482">  │ │ │ ├─┬ glsl-inject-defines@1.0.3 </tspan>
+<tspan x="10" y="1498">  │ │ │ │ └── glsl-token-inject-block@1.1.0 </tspan>
+<tspan x="10" y="1514">  │ │ │ ├── glsl-token-defines@1.0.0 </tspan>
+<tspan x="10" y="1530">  │ │ │ ├── glsl-token-depth@1.1.2 </tspan>
+<tspan x="10" y="1546">  │ │ │ ├─┬ glsl-token-descope@1.0.2 </tspan>
+<tspan x="10" y="1562">  │ │ │ │ ├── glsl-token-assignments@2.0.2 </tspan>
+<tspan x="10" y="1578">  │ │ │ │ └── glsl-token-properties@1.0.1 </tspan>
+<tspan x="10" y="1594">  │ │ │ ├── glsl-token-scope@1.1.2 </tspan>
+<tspan x="10" y="1610">  │ │ │ ├── glsl-token-string@1.0.1 </tspan>
+<tspan x="10" y="1626">  │ │ │ ├── glsl-token-whitespace-trim@1.0.0 </tspan>
+<tspan x="10" y="1642">  │ │ │ ├── glsl-tokenizer@2.1.2 </tspan>
+<tspan x="10" y="1658">  │ │ │ ├── murmurhash-js@1.0.0 </tspan>
+<tspan x="10" y="1674">  │ │ │ └── shallow-copy@0.0.1 </tspan>
+<tspan x="10" y="1690">  │ │ ├─┬ glslify-deps@1.3.0 </tspan>
+<tspan x="10" y="1706">  │ │ │ ├── events@1.1.1 </tspan>
+<tspan x="10" y="1722">  │ │ │ ├─┬ findup@0.1.5 </tspan>
+<tspan x="10" y="1738">  │ │ │ │ └── colors@0.6.2 </tspan>
+<tspan x="10" y="1754">  │ │ │ ├── graceful-fs@4.1.11 </tspan>
+<tspan x="10" y="1770">  │ │ │ ├── inherits@2.0.3 </tspan>
+<tspan x="10" y="1786">  │ │ │ └─┬ map-limit@0.0.1 </tspan>
+<tspan x="10" y="1802">  │ │ │   └─┬ once@1.3.3 </tspan>
+<tspan x="10" y="1818">  │ │ │     └── wrappy@1.0.2 </tspan>
+<tspan x="10" y="1834">  │ │ ├── minimist@1.2.0 </tspan>
+<tspan x="10" y="1850">  │ │ ├── resolve@1.1.7 </tspan>
+<tspan x="10" y="1866">  │ │ ├─┬ static-module@1.3.1 </tspan>
+<tspan x="10" y="1882">  │ │ │ ├─┬ concat-stream@1.4.10 </tspan>
+<tspan x="10" y="1898">  │ │ │ │ ├── readable-stream@1.1.14 </tspan>
+<tspan x="10" y="1914">  │ │ │ │ └── typedarray@0.0.6 </tspan>
+<tspan x="10" y="1930">  │ │ │ ├─┬ duplexer2@0.0.2 </tspan>
+<tspan x="10" y="1946">  │ │ │ │ └── readable-stream@1.1.14 </tspan>
+<tspan x="10" y="1962">  │ │ │ ├─┬ escodegen@1.3.3 </tspan>
+<tspan x="10" y="1978">  │ │ │ │ ├── estraverse@1.5.1 </tspan>
+<tspan x="10" y="1994">  │ │ │ │ └── esutils@1.0.0 </tspan>
+<tspan x="10" y="2010">  │ │ │ ├─┬ falafel@1.2.0 </tspan>
+<tspan x="10" y="2026">  │ │ │ │ ├── acorn@1.2.2 </tspan>
+<tspan x="10" y="2042">  │ │ │ │ ├── foreach@2.0.5 </tspan>
+<tspan x="10" y="2058">  │ │ │ │ ├── isarray@0.0.1 </tspan>
+<tspan x="10" y="2074">  │ │ │ │ └── object-keys@1.0.11 </tspan>
+<tspan x="10" y="2090">  │ │ │ ├── has@1.0.1 </tspan>
+<tspan x="10" y="2106">  │ │ │ ├── object-inspect@0.4.0 </tspan>
+<tspan x="10" y="2122">  │ │ │ ├─┬ quote-stream@0.0.0 </tspan>
+<tspan x="10" y="2138">  │ │ │ │ ├── minimist@0.0.8 </tspan>
+<tspan x="10" y="2154">  │ │ │ │ └─┬ through2@0.4.2 </tspan>
+<tspan x="10" y="2170">  │ │ │ │   └─┬ xtend@2.1.2 </tspan>
+<tspan x="10" y="2186">  │ │ │ │     └── object-keys@0.4.0 </tspan>
+<tspan x="10" y="2202">  │ │ │ ├─┬ readable-stream@1.0.34 </tspan>
+<tspan x="10" y="2218">  │ │ │ │ └── string_decoder@0.10.31 </tspan>
+<tspan x="10" y="2234">  │ │ │ ├─┬ static-eval@0.2.4 </tspan>
+<tspan x="10" y="2250">  │ │ │ │ └─┬ escodegen@0.0.28 </tspan>
+<tspan x="10" y="2266">  │ │ │ │   ├── esprima@1.0.4 </tspan>
+<tspan x="10" y="2282">  │ │ │ │   └── estraverse@1.3.2 </tspan>
+<tspan x="10" y="2298">  │ │ │ └─┬ through2@0.4.2 </tspan>
+<tspan x="10" y="2314">  │ │ │   └─┬ xtend@2.1.2 </tspan>
+<tspan x="10" y="2330">  │ │ │     └── object-keys@0.4.0 </tspan>
+<tspan x="10" y="2346">  │ │ ├── through2@0.6.5 </tspan>
+<tspan x="10" y="2362">  │ │ └── xtend@4.0.1 </tspan>
+<tspan x="10" y="2378">  │ ├── iota-array@1.0.0 </tspan>
+<tspan x="10" y="2394">  │ └─┬ surface-nets@1.0.2 </tspan>
+<tspan x="10" y="2410">  │   ├── ndarray-extract-contour@1.0.1 </tspan>
+<tspan x="10" y="2426">  │   ├─┬ triangulate-hypercube@1.0.1 </tspan>
+<tspan x="10" y="2442">  │   │ ├── gamma@0.1.0 </tspan>
+<tspan x="10" y="2458">  │   │ ├── permutation-parity@1.0.0 </tspan>
+<tspan x="10" y="2474">  │   │ └─┬ permutation-rank@1.0.0 </tspan>
+<tspan x="10" y="2490">  │   │   └── invert-permutation@1.0.0 </tspan>
+<tspan x="10" y="2506">  │   └── zero-crossings@1.0.1 </tspan>
+<tspan x="10" y="2522">  ├─┬ gl-error2d@1.2.1 </tspan>
+<tspan x="10" y="2538">  │ ├─┬ glslify@2.3.1 </tspan>
+<tspan x="10" y="2554">  │ │ ├── bl@0.9.5 </tspan>
+<tspan x="10" y="2570">  │ │ └── glslify-bundle@2.0.4 </tspan>
+<tspan x="10" y="2586">  │ └── typedarray-pool@1.1.0 </tspan>
+<tspan x="10" y="2602">  ├─┬ gl-error3d@1.0.4 </tspan>
+<tspan x="10" y="2618">  │ ├── gl-vao@1.3.0 </tspan>
+<tspan x="10" y="2634">  │ └─┬ glslify@2.3.1 </tspan>
+<tspan x="10" y="2650">  │   ├── bl@0.9.5 </tspan>
+<tspan x="10" y="2666">  │   └── glslify-bundle@2.0.4 </tspan>
+<tspan x="10" y="2682">  ├─┬ gl-heatmap2d@1.0.3 </tspan>
+<tspan x="10" y="2698">  │ └── binary-search-bounds@2.0.3 </tspan>
+<tspan x="10" y="2714">  ├─┬ gl-line2d@1.4.1 </tspan>
+<tspan x="10" y="2730">  │ ├── gl-texture2d@2.1.0 </tspan>
+<tspan x="10" y="2746">  │ ├─┬ glslify@2.3.1 </tspan>
+<tspan x="10" y="2762">  │ │ ├── bl@0.9.5 </tspan>
+<tspan x="10" y="2778">  │ │ └── glslify-bundle@2.0.4 </tspan>
+<tspan x="10" y="2794">  │ └── snap-points-2d@1.0.1 </tspan>
+<tspan x="10" y="2810">  ├─┬ gl-line3d@1.1.0 </tspan>
+<tspan x="10" y="2826">  │ ├── binary-search-bounds@1.0.0 </tspan>
+<tspan x="10" y="2842">  │ ├── glsl-read-float@1.1.0 </tspan>
+<tspan x="10" y="2858">  │ └─┬ glslify@2.3.1 </tspan>
+<tspan x="10" y="2874">  │   ├── bl@0.9.5 </tspan>
+<tspan x="10" y="2890">  │   └── glslify-bundle@2.0.4 </tspan>
+<tspan x="10" y="2906">  ├── gl-mat4@1.1.4 </tspan>
+<tspan x="10" y="2922">  ├─┬ gl-mesh3d@1.2.0 </tspan>
+<tspan x="10" y="2938">  │ ├─┬ barycentric@1.0.1 </tspan>
+<tspan x="10" y="2954">  │ │ └─┬ robust-linear-solve@1.0.0 </tspan>
+<tspan x="10" y="2970">  │ │   └─┬ robust-determinant@1.1.0 </tspan>
+<tspan x="10" y="2986">  │ │     └── robust-compress@1.0.0 </tspan>
+<tspan x="10" y="3002">  │ ├─┬ colormap@2.2.0 </tspan>
+<tspan x="10" y="3018">  │ │ ├── arraytools@1.1.2 </tspan>
+<tspan x="10" y="3034">  │ │ └── clone@1.0.2 </tspan>
+<tspan x="10" y="3050">  │ ├── glsl-specular-cook-torrance@2.0.1 </tspan>
+<tspan x="10" y="3066">  │ ├─┬ glslify@2.3.1 </tspan>
+<tspan x="10" y="3082">  │ │ ├── bl@0.9.5 </tspan>
+<tspan x="10" y="3098">  │ │ └── glslify-bundle@2.0.4 </tspan>
+<tspan x="10" y="3114">  │ ├── normals@1.1.0 </tspan>
+<tspan x="10" y="3130">  │ ├─┬ polytope-closest-point@1.0.0 </tspan>
+<tspan x="10" y="3146">  │ │ └── numeric@1.2.6 </tspan>
+<tspan x="10" y="3162">  │ └─┬ simplicial-complex-contour@1.0.2 </tspan>
+<tspan x="10" y="3178">  │   ├── marching-simplex-table@1.0.0 </tspan>
+<tspan x="10" y="3194">  │   └── ndarray-sort@1.0.1 </tspan>
+<tspan x="10" y="3210">  ├─┬ gl-plot2d@1.2.0 </tspan>
+<tspan x="10" y="3226">  │ ├── binary-search-bounds@2.0.3 </tspan>
+<tspan x="10" y="3242">  │ ├── gl-select-static@2.0.2 </tspan>
+<tspan x="10" y="3258">  │ ├── gl-shader@4.2.1 </tspan>
+<tspan x="10" y="3274">  │ ├── glsl-inverse@1.0.0 </tspan>
+<tspan x="10" y="3290">  │ ├─┬ glslify@2.3.1 </tspan>
+<tspan x="10" y="3306">  │ │ ├── bl@0.9.5 </tspan>
+<tspan x="10" y="3322">  │ │ └── glslify-bundle@2.0.4 </tspan>
+<tspan x="10" y="3338">  │ └── text-cache@4.1.0 </tspan>
+<tspan x="10" y="3354">  ├─┬ gl-plot3d@1.5.4 </tspan>
+<tspan x="10" y="3370">  │ ├─┬ 3d-view-controls@2.2.0 </tspan>
+<tspan x="10" y="3386">  │ │ └── mouse-event-offset@3.0.2 </tspan>
+<tspan x="10" y="3402">  │ ├─┬ a-big-triangle@1.0.3 </tspan>
+<tspan x="10" y="3418">  │ │ └── weak-map@1.0.5 </tspan>
+<tspan x="10" y="3434">  │ ├─┬ gl-axes3d@1.2.5 </tspan>
+<tspan x="10" y="3450">  │ │ ├── extract-frustum-planes@1.0.0 </tspan>
+<tspan x="10" y="3466">  │ │ ├── gl-state@1.0.0 </tspan>
+<tspan x="10" y="3482">  │ │ ├── gl-vec4@1.0.1 </tspan>
+<tspan x="10" y="3498">  │ │ ├─┬ glslify@2.3.1 </tspan>
+<tspan x="10" y="3514">  │ │ │ ├── bl@0.9.5 </tspan>
+<tspan x="10" y="3530">  │ │ │ └── glslify-bundle@2.0.4 </tspan>
+<tspan x="10" y="3546">  │ │ └─┬ split-polygon@1.0.0 </tspan>
+<tspan x="10" y="3562">  │ │   └── robust-dot-product@1.0.0 </tspan>
+<tspan x="10" y="3578">  │ ├── gl-fbo@2.0.5 </tspan>
+<tspan x="10" y="3594">  │ ├─┬ gl-spikes3d@1.0.5 </tspan>
+<tspan x="10" y="3610">  │ │ └─┬ glslify@2.3.1 </tspan>
+<tspan x="10" y="3626">  │ │   ├── bl@0.9.5 </tspan>
+<tspan x="10" y="3642">  │ │   └── glslify-bundle@2.0.4 </tspan>
+<tspan x="10" y="3658">  │ ├─┬ glslify@2.3.1 </tspan>
+<tspan x="10" y="3674">  │ │ ├── bl@0.9.5 </tspan>
+<tspan x="10" y="3690">  │ │ └── glslify-bundle@2.0.4 </tspan>
+<tspan x="10" y="3706">  │ └── is-mobile@0.2.2 </tspan>
+<tspan x="10" y="3722">  ├─┬ gl-pointcloud2d@1.0.0 </tspan>
+<tspan x="10" y="3738">  │ ├── gl-shader@4.2.1 </tspan>
+<tspan x="10" y="3754">  │ └─┬ glslify@2.3.1 </tspan>
+<tspan x="10" y="3770">  │   ├── bl@0.9.5 </tspan>
+<tspan x="10" y="3786">  │   └── glslify-bundle@2.0.4 </tspan>
+<tspan x="10" y="3802">  ├─┬ gl-scatter2d@1.2.2 </tspan>
+<tspan x="10" y="3818">  │ ├── binary-search-bounds@2.0.3 </tspan>
+<tspan x="10" y="3834">  │ ├─┬ glslify@2.3.1 </tspan>
+<tspan x="10" y="3850">  │ │ ├── bl@0.9.5 </tspan>
+<tspan x="10" y="3866">  │ │ └── glslify-bundle@2.0.4 </tspan>
+<tspan x="10" y="3882">  │ └── snap-points-2d@3.1.0 </tspan>
+<tspan x="10" y="3898">  ├─┬ gl-scatter2d-sdf@1.3.4 </tspan>
+<tspan x="10" y="3914">  │ ├── binary-search-bounds@2.0.3 </tspan>
+<tspan x="10" y="3930">  │ ├── color-id@1.0.3 </tspan>
+<tspan x="10" y="3946">  │ ├─┬ font-atlas-sdf@1.2.0 </tspan>
+<tspan x="10" y="3962">  │ │ └── tiny-sdf@1.0.2 </tspan>
+<tspan x="10" y="3978">  │ ├── gl-shader@4.2.1 </tspan>
+<tspan x="10" y="3994">  │ ├─┬ glslify@2.3.1 </tspan>
+<tspan x="10" y="4010">  │ │ ├── bl@0.9.5 </tspan>
+<tspan x="10" y="4026">  │ │ └── glslify-bundle@2.0.4 </tspan>
+<tspan x="10" y="4042">  │ └── snap-points-2d@3.1.0 </tspan>
+<tspan x="10" y="4058">  ├─┬ gl-scatter3d@1.0.10 </tspan>
+<tspan x="10" y="4074">  │ ├─┬ glslify@2.3.1 </tspan>
+<tspan x="10" y="4090">  │ │ ├── bl@0.9.5 </tspan>
+<tspan x="10" y="4106">  │ │ └── glslify-bundle@2.0.4 </tspan>
+<tspan x="10" y="4122">  │ └─┬ vectorize-text@3.0.2 </tspan>
+<tspan x="10" y="4138">  │   ├─┬ planar-graph-to-polyline@1.0.5 </tspan>
+<tspan x="10" y="4154">  │   │ ├── edges-to-adjacency-list@1.0.0 </tspan>
+<tspan x="10" y="4170">  │   │ ├─┬ planar-dual@1.0.2 </tspan>
+<tspan x="10" y="4186">  │   │ │ └─┬ compare-angle@1.0.1 </tspan>
+<tspan x="10" y="4202">  │   │ │   ├── robust-product@1.0.0 </tspan>
+<tspan x="10" y="4218">  │   │ │   └── signum@0.0.0 </tspan>
+<tspan x="10" y="4234">  │   │ └─┬ point-in-big-polygon@2.0.0 </tspan>
+<tspan x="10" y="4250">  │   │   ├── interval-tree-1d@1.0.3 </tspan>
+<tspan x="10" y="4266">  │   │   └─┬ slab-decomposition@1.0.2 </tspan>
+<tspan x="10" y="4282">  │   │     └── functional-red-black-tree@1.0.1 </tspan>
+<tspan x="10" y="4298">  │   ├─┬ simplify-planar-graph@2.0.1 </tspan>
+<tspan x="10" y="4314">  │   │ └─┬ simplicial-complex@0.3.3 </tspan>
+<tspan x="10" y="4330">  │   │   ├── bit-twiddle@0.0.2 </tspan>
+<tspan x="10" y="4346">  │   │   └── union-find@0.0.4 </tspan>
+<tspan x="10" y="4362">  │   └── triangulate-polyline@1.0.3 </tspan>
+<tspan x="10" y="4378">  ├─┬ gl-select-box@1.0.1 </tspan>
+<tspan x="10" y="4394">  │ └─┬ glslify@2.3.1 </tspan>
+<tspan x="10" y="4410">  │   ├── bl@0.9.5 </tspan>
+<tspan x="10" y="4426">  │   └── glslify-bundle@2.0.4 </tspan>
+<tspan x="10" y="4442">  ├─┬ gl-shader@4.2.0 </tspan>
+<tspan x="10" y="4458">  │ ├─┬ gl-format-compiler-error@1.0.2 </tspan>
+<tspan x="10" y="4474">  │ │ ├─┬ add-line-numbers@1.0.1 </tspan>
+<tspan x="10" y="4490">  │ │ │ └─┬ pad-left@1.0.2 </tspan>
+<tspan x="10" y="4506">  │ │ │   └── repeat-string@1.6.1 </tspan>
+<tspan x="10" y="4522">  │ │ ├── gl-constants@1.0.0 </tspan>
+<tspan x="10" y="4538">  │ │ ├─┬ glsl-shader-name@1.0.0 </tspan>
+<tspan x="10" y="4554">  │ │ │ └── atob-lite@1.0.0 </tspan>
+<tspan x="10" y="4570">  │ │ └── sprintf-js@1.0.3 </tspan>
+<tspan x="10" y="4586">  │ └── weakmap-shim@1.1.1 </tspan>
+<tspan x="10" y="4602">  ├── gl-spikes2d@1.0.1 </tspan>
+<tspan x="10" y="4618">  ├─┬ gl-surface3d@1.3.0 </tspan>
+<tspan x="10" y="4634">  │ ├── bit-twiddle@1.0.2 </tspan>
+<tspan x="10" y="4650">  │ ├── dup@1.0.0 </tspan>
+<tspan x="10" y="4666">  │ ├── glsl-specular-beckmann@1.1.2 </tspan>
+<tspan x="10" y="4682">  │ ├─┬ glslify@2.3.1 </tspan>
+<tspan x="10" y="4698">  │ │ ├── bl@0.9.5 </tspan>
+<tspan x="10" y="4714">  │ │ └── glslify-bundle@2.0.4 </tspan>
+<tspan x="10" y="4730">  │ ├── ndarray-gradient@1.0.0 </tspan>
+<tspan x="10" y="4746">  │ ├── ndarray-pack@1.2.1 </tspan>
+<tspan x="10" y="4762">  │ └── ndarray-scratch@1.2.0 </tspan>
+<tspan x="10" y="4778">  ├─┬ mapbox-gl@0.22.1 </tspan>
+<tspan x="10" y="4794">  │ ├── csscolorparser@1.0.3 </tspan>
+<tspan x="10" y="4810">  │ ├── earcut@2.1.1 </tspan>
+<tspan x="10" y="4826">  │ ├── feature-filter@2.2.0 </tspan>
+<tspan x="10" y="4842">  │ ├─┬ geojson-rewind@0.1.0 </tspan>
+<tspan x="10" y="4858">  │ │ ├─┬ concat-stream@1.2.1 </tspan>
+<tspan x="10" y="4874">  │ │ │ └─┬ bops@0.0.6 </tspan>
+<tspan x="10" y="4890">  │ │ │   ├── base64-js@0.0.2 </tspan>
+<tspan x="10" y="4906">  │ │ │   └── to-utf8@0.0.1 </tspan>
+<tspan x="10" y="4922">  │ │ ├─┬ geojson-area@0.1.0 </tspan>
+<tspan x="10" y="4938">  │ │ │ └── wgs84@0.0.0 </tspan>
+<tspan x="10" y="4954">  │ │ └── minimist@0.0.5 </tspan>
+<tspan x="10" y="4970">  │ ├── geojson-vt@2.4.0 </tspan>
+<tspan x="10" y="4986">  │ ├── gl-matrix@2.3.2 </tspan>
+<tspan x="10" y="5002">  │ ├── grid-index@1.0.0 </tspan>
+<tspan x="10" y="5018">  │ ├── mapbox-gl-function@1.3.0 </tspan>
+<tspan x="10" y="5034">  │ ├─┬ mapbox-gl-shaders@1.0.0  (git://github.com/mapbox/mapbox-gl-shaders.git#de2ab007455aa258\</tspan>
+<tspan x="10" y="5050">7c552694c68583f94c9f2747)</tspan>
+<tspan x="10" y="5066">  │ │ └─┬ brfs@1.4.3 </tspan>
+<tspan x="10" y="5082">  │ │   ├─┬ quote-stream@1.0.2 </tspan>
+<tspan x="10" y="5098">  │ │   │ └── buffer-equal@0.0.1 </tspan>
+<tspan x="10" y="5114">  │ │   └─┬ through2@2.0.3 </tspan>
+<tspan x="10" y="5130">  │ │     └─┬ readable-stream@2.2.9 </tspan>
+<tspan x="10" y="5146">  │ │       ├── isarray@1.0.0 </tspan>
+<tspan x="10" y="5162">  │ │       └── string_decoder@1.0.0 </tspan>
+<tspan x="10" y="5178">  │ ├─┬ mapbox-gl-style-spec@8.8.0  (git://github.com/mapbox/mapbox-gl-style-spec.git#83b1a3e583\</tspan>
+<tspan x="10" y="5194">7d785af582efd5ed1a212f2df6a4ae)</tspan>
+<tspan x="10" y="5210">  │ │ ├─┬ jsonlint-lines-primitives@1.6.0 </tspan>
+<tspan x="10" y="5226">  │ │ │ ├── JSV@4.0.2 </tspan>
+<tspan x="10" y="5242">  │ │ │ └─┬ nomnom@1.8.1 </tspan>
+<tspan x="10" y="5258">  │ │ │   ├─┬ chalk@0.4.0 </tspan>
+<tspan x="10" y="5274">  │ │ │   │ ├── ansi-styles@1.0.0 </tspan>
+<tspan x="10" y="5290">  │ │ │   │ ├── has-color@0.1.7 </tspan>
+<tspan x="10" y="5306">  │ │ │   │ └── strip-ansi@0.1.1 </tspan>
+<tspan x="10" y="5322">  │ │ │   └── underscore@1.6.0 </tspan>
+<tspan x="10" y="5338">  │ │ ├─┬ lodash.isequal@3.0.4 </tspan>
+<tspan x="10" y="5354">  │ │ │ ├─┬ lodash._baseisequal@3.0.7 </tspan>
+<tspan x="10" y="5370">  │ │ │ │ ├── lodash.isarray@3.0.4 </tspan>
+<tspan x="10" y="5386">  │ │ │ │ ├── lodash.istypedarray@3.0.6 </tspan>
+<tspan x="10" y="5402">  │ │ │ │ └─┬ lodash.keys@3.1.2 </tspan>
+<tspan x="10" y="5418">  │ │ │ │   ├── lodash._getnative@3.9.1 </tspan>
+<tspan x="10" y="5434">  │ │ │ │   └── lodash.isarguments@3.1.0 </tspan>
+<tspan x="10" y="5450">  │ │ │ └── lodash._bindcallback@3.0.1 </tspan>
+<tspan x="10" y="5466">  │ │ ├── minimist@0.0.8 </tspan>
+<tspan x="10" y="5482">  │ │ ├── rw@0.1.4 </tspan>
+<tspan x="10" y="5498">  │ │ └─┬ sort-object@0.3.2 </tspan>
+<tspan x="10" y="5514">  │ │   ├── sort-asc@0.1.0 </tspan>
+<tspan x="10" y="5530">  │ │   └── sort-desc@0.1.1 </tspan>
+<tspan x="10" y="5546">  │ ├── mapbox-gl-supported@1.2.0 </tspan>
+<tspan x="10" y="5562">  │ ├─┬ pbf@1.3.7 </tspan>
+<tspan x="10" y="5578">  │ │ ├── ieee754@1.1.8 </tspan>
+<tspan x="10" y="5594">  │ │ └─┬ resolve-protobuf-schema@2.0.0 </tspan>
+<tspan x="10" y="5610">  │ │   └── protocol-buffers-schema@2.2.0 </tspan>
+<tspan x="10" y="5626">  │ ├── pngjs@2.3.1 </tspan>
+<tspan x="10" y="5642">  │ ├── point-geometry@0.0.0 </tspan>
+<tspan x="10" y="5658">  │ ├── quickselect@1.0.0 </tspan>
+<tspan x="10" y="5674">  │ ├─┬ request@2.81.0 </tspan>
+<tspan x="10" y="5690">  │ │ ├── aws-sign2@0.6.0 </tspan>
+<tspan x="10" y="5706">  │ │ ├── aws4@1.6.0 </tspan>
+<tspan x="10" y="5722">  │ │ ├── caseless@0.12.0 </tspan>
+<tspan x="10" y="5738">  │ │ ├─┬ combined-stream@1.0.5 </tspan>
+<tspan x="10" y="5754">  │ │ │ └── delayed-stream@1.0.0 </tspan>
+<tspan x="10" y="5770">  │ │ ├── extend@3.0.0 </tspan>
+<tspan x="10" y="5786">  │ │ ├── forever-agent@0.6.1 </tspan>
+<tspan x="10" y="5802">  │ │ ├─┬ form-data@2.1.4 </tspan>
+<tspan x="10" y="5818">  │ │ │ └── asynckit@0.4.0 </tspan>
+<tspan x="10" y="5834">  │ │ ├─┬ har-validator@4.2.1 </tspan>
+<tspan x="10" y="5850">  │ │ │ ├─┬ ajv@4.11.7 </tspan>
+<tspan x="10" y="5866">  │ │ │ │ ├── co@4.6.0 </tspan>
+<tspan x="10" y="5882">  │ │ │ │ └─┬ json-stable-stringify@1.0.1 </tspan>
+<tspan x="10" y="5898">  │ │ │ │   └── jsonify@0.0.0 </tspan>
+<tspan x="10" y="5914">  │ │ │ └── har-schema@1.0.5 </tspan>
+<tspan x="10" y="5930">  │ │ ├─┬ hawk@3.1.3 </tspan>
+<tspan x="10" y="5946">  │ │ │ ├── boom@2.10.1 </tspan>
+<tspan x="10" y="5962">  │ │ │ ├── cryptiles@2.0.5 </tspan>
+<tspan x="10" y="5978">  │ │ │ ├── hoek@2.16.3 </tspan>
+<tspan x="10" y="5994">  │ │ │ └── sntp@1.0.9 </tspan>
+<tspan x="10" y="6010">  │ │ ├─┬ http-signature@1.1.1 </tspan>
+<tspan x="10" y="6026">  │ │ │ ├── assert-plus@0.2.0 </tspan>
+<tspan x="10" y="6042">  │ │ │ ├─┬ jsprim@1.4.0 </tspan>
+<tspan x="10" y="6058">  │ │ │ │ ├── assert-plus@1.0.0 </tspan>
+<tspan x="10" y="6074">  │ │ │ │ ├── extsprintf@1.0.2 </tspan>
+<tspan x="10" y="6090">  │ │ │ │ ├── json-schema@0.2.3 </tspan>
+<tspan x="10" y="6106">  │ │ │ │ └── verror@1.3.6 </tspan>
+<tspan x="10" y="6122">  │ │ │ └─┬ sshpk@1.13.0 </tspan>
+<tspan x="10" y="6138">  │ │ │   ├── asn1@0.2.3 </tspan>
+<tspan x="10" y="6154">  │ │ │   ├── assert-plus@1.0.0 </tspan>
+<tspan x="10" y="6170">  │ │ │   ├── bcrypt-pbkdf@1.0.1 </tspan>
+<tspan x="10" y="6186">  │ │ │   ├─┬ dashdash@1.14.1 </tspan>
+<tspan x="10" y="6202">  │ │ │   │ └── assert-plus@1.0.0 </tspan>
+<tspan x="10" y="6218">  │ │ │   ├── ecc-jsbn@0.1.1 </tspan>
+<tspan x="10" y="6234">  │ │ │   ├─┬ getpass@0.1.6 </tspan>
+<tspan x="10" y="6250">  │ │ │   │ └── assert-plus@1.0.0 </tspan>
+<tspan x="10" y="6266">  │ │ │   ├── jodid25519@1.0.2 </tspan>
+<tspan x="10" y="6282">  │ │ │   ├── jsbn@0.1.1 </tspan>
+<tspan x="10" y="6298">  │ │ │   └── tweetnacl@0.14.5 </tspan>
+<tspan x="10" y="6314">  │ │ ├── is-typedarray@1.0.0 </tspan>
+<tspan x="10" y="6330">  │ │ ├── isstream@0.1.2 </tspan>
+<tspan x="10" y="6346">  │ │ ├── json-stringify-safe@5.0.1 </tspan>
+<tspan x="10" y="6362">  │ │ ├─┬ mime-types@2.1.15 </tspan>
+<tspan x="10" y="6378">  │ │ │ └── mime-db@1.27.0 </tspan>
+<tspan x="10" y="6394">  │ │ ├── oauth-sign@0.8.2 </tspan>
+<tspan x="10" y="6410">  │ │ ├── performance-now@0.2.0 </tspan>
+<tspan x="10" y="6426">  │ │ ├── qs@6.4.0 </tspan>
+<tspan x="10" y="6442">  │ │ ├── safe-buffer@5.0.1 </tspan>
+<tspan x="10" y="6458">  │ │ ├── stringstream@0.0.5 </tspan>
+<tspan x="10" y="6474">  │ │ ├─┬ tough-cookie@2.3.2 </tspan>
+<tspan x="10" y="6490">  │ │ │ └── punycode@1.4.1 </tspan>
+<tspan x="10" y="6506">  │ │ ├── tunnel-agent@0.6.0 </tspan>
+<tspan x="10" y="6522">  │ │ └── uuid@3.0.1 </tspan>
+<tspan x="10" y="6538">  │ ├── resolve-url@0.2.1 </tspan>
+<tspan x="10" y="6554">  │ ├── shelf-pack@1.1.0 </tspan>
+<tspan x="10" y="6570">  │ ├─┬ supercluster@2.3.0 </tspan>
+<tspan x="10" y="6586">  │ │ └── kdbush@1.0.1 </tspan>
+<tspan x="10" y="6602">  │ ├─┬ unassertify@2.0.4 </tspan>
+<tspan x="10" y="6618">  │ │ ├── acorn@4.0.11 </tspan>
+<tspan x="10" y="6634">  │ │ ├── convert-source-map@1.5.0 </tspan>
+<tspan x="10" y="6650">  │ │ ├─┬ escodegen@1.8.1 </tspan>
+<tspan x="10" y="6666">  │ │ │ ├── esprima@2.7.3 </tspan>
+<tspan x="10" y="6682">  │ │ │ ├── estraverse@1.9.3 </tspan>
+<tspan x="10" y="6698">  │ │ │ ├── esutils@2.0.2 </tspan>
+<tspan x="10" y="6714">  │ │ │ ├─┬ optionator@0.8.2 </tspan>
+<tspan x="10" y="6730">  │ │ │ │ ├── deep-is@0.1.3 </tspan>
+<tspan x="10" y="6746">  │ │ │ │ ├── fast-levenshtein@2.0.6 </tspan>
+<tspan x="10" y="6762">  │ │ │ │ ├── levn@0.3.0 </tspan>
+<tspan x="10" y="6778">  │ │ │ │ ├── prelude-ls@1.1.2 </tspan>
+<tspan x="10" y="6794">  │ │ │ │ ├── type-check@0.3.2 </tspan>
+<tspan x="10" y="6810">  │ │ │ │ └── wordwrap@1.0.0 </tspan>
+<tspan x="10" y="6826">  │ │ │ └── source-map@0.2.0 </tspan>
+<tspan x="10" y="6842">  │ │ ├─┬ multi-stage-sourcemap@0.2.1 </tspan>
+<tspan x="10" y="6858">  │ │ │ └─┬ source-map@0.1.43 </tspan>
+<tspan x="10" y="6874">  │ │ │   └── amdefine@1.0.1 </tspan>
+<tspan x="10" y="6890">  │ │ ├── through@2.3.8 </tspan>
+<tspan x="10" y="6906">  │ │ └─┬ unassert@1.5.1 </tspan>
+<tspan x="10" y="6922">  │ │   ├── acorn@4.0.11 </tspan>
+<tspan x="10" y="6938">  │ │   ├─┬ call-matcher@1.0.1 </tspan>
+<tspan x="10" y="6954">  │ │   │ ├── core-js@2.4.1 </tspan>
+<tspan x="10" y="6970">  │ │   │ └── estraverse@4.2.0 </tspan>
+<tspan x="10" y="6986">  │ │   ├── deep-equal@1.0.1 </tspan>
+<tspan x="10" y="7002">  │ │   ├── espurify@1.7.0 </tspan>
+<tspan x="10" y="7018">  │ │   ├── estraverse@4.2.0 </tspan>
+<tspan x="10" y="7034">  │ │   └── esutils@2.0.2 </tspan>
+<tspan x="10" y="7050">  │ ├── unitbezier@0.0.0 </tspan>
+<tspan x="10" y="7066">  │ ├── vector-tile@1.3.0 </tspan>
+<tspan x="10" y="7082">  │ ├── vt-pbf@2.1.2 </tspan>
+<tspan x="10" y="7098">  │ ├── webworkify@1.4.0 </tspan>
+<tspan x="10" y="7114">  │ └── whoots-js@2.1.0 </tspan>
+<tspan x="10" y="7130">  ├─┬ matrix-camera-controller@2.1.3 </tspan>
+<tspan x="10" y="7146">  │ ├── gl-vec3@1.0.3 </tspan>
+<tspan x="10" y="7162">  │ └─┬ mat4-interpolate@1.0.4 </tspan>
+<tspan x="10" y="7178">  │   ├── mat4-decompose@1.0.4 </tspan>
+<tspan x="10" y="7194">  │   ├── mat4-recompose@1.0.4 </tspan>
+<tspan x="10" y="7210">  │   └─┬ quat-slerp@1.0.1 </tspan>
+<tspan x="10" y="7226">  │     └── gl-quat@1.0.0 </tspan>
+<tspan x="10" y="7242">  ├─┬ mouse-change@1.4.0 </tspan>
+<tspan x="10" y="7258">  │ └── mouse-event@1.0.5 </tspan>
+<tspan x="10" y="7274">  ├─┬ mouse-wheel@1.2.0 </tspan>
+<tspan x="10" y="7290">  │ ├── signum@1.0.0 </tspan>
+<tspan x="10" y="7306">  │ └─┬ to-px@1.0.1 </tspan>
+<tspan x="10" y="7322">  │   └── parse-unit@1.0.1 </tspan>
+<tspan x="10" y="7338">  ├─┬ ndarray@1.0.18 </tspan>
+<tspan x="10" y="7354">  │ └── is-buffer@1.1.5 </tspan>
+<tspan x="10" y="7370">  ├─┬ ndarray-fill@1.0.2 </tspan>
+<tspan x="10" y="7386">  │ └─┬ cwise@1.0.10 </tspan>
+<tspan x="10" y="7402">  │   ├─┬ cwise-parser@1.0.3 </tspan>
+<tspan x="10" y="7418">  │   │ └── esprima@1.1.1 </tspan>
+<tspan x="10" y="7434">  │   └─┬ uglify-js@2.8.22 </tspan>
+<tspan x="10" y="7450">  │     ├── source-map@0.5.6 </tspan>
+<tspan x="10" y="7466">  │     ├── uglify-to-browserify@1.0.2 </tspan>
+<tspan x="10" y="7482">  │     └─┬ yargs@3.10.0 </tspan>
+<tspan x="10" y="7498">  │       ├── camelcase@1.2.1 </tspan>
+<tspan x="10" y="7514">  │       ├─┬ cliui@2.1.0 </tspan>
+<tspan x="10" y="7530">  │       │ ├─┬ center-align@0.1.3 </tspan>
+<tspan x="10" y="7546">  │       │ │ ├─┬ align-text@0.1.4 </tspan>
+<tspan x="10" y="7562">  │       │ │ │ ├── kind-of@3.1.0 </tspan>
+<tspan x="10" y="7578">  │       │ │ │ └── longest@1.0.1 </tspan>
+<tspan x="10" y="7594">  │       │ │ └── lazy-cache@1.0.4 </tspan>
+<tspan x="10" y="7610">  │       │ ├── right-align@0.1.3 </tspan>
+<tspan x="10" y="7626">  │       │ └── wordwrap@0.0.2 </tspan>
+<tspan x="10" y="7642">  │       ├── decamelize@1.2.0 </tspan>
+<tspan x="10" y="7658">  │       └── window-size@0.1.0 </tspan>
+<tspan x="10" y="7674">  ├─┬ ndarray-homography@1.0.0 </tspan>
+<tspan x="10" y="7690">  │ ├─┬ gl-matrix-invert@1.0.0 </tspan>
+<tspan x="10" y="7706">  │ │ ├── gl-mat2@1.0.0 </tspan>
+<tspan x="10" y="7722">  │ │ └── gl-mat3@1.0.0 </tspan>
+<tspan x="10" y="7738">  │ └─┬ ndarray-warp@1.0.1 </tspan>
+<tspan x="10" y="7754">  │   └── ndarray-linear-interpolate@1.0.0 </tspan>
+<tspan x="10" y="7770">  ├─┬ ndarray-ops@1.2.2 </tspan>
+<tspan x="10" y="7786">  │ └── cwise-compiler@1.1.2 </tspan>
+<tspan x="10" y="7802">  ├── regl@1.3.0 </tspan>
+<tspan x="10" y="7818">  ├── right-now@1.0.0 </tspan>
+<tspan x="10" y="7834">  ├─┬ robust-orientation@1.1.3 </tspan>
+<tspan x="10" y="7850">  │ ├─┬ robust-scale@1.0.2 </tspan>
+<tspan x="10" y="7866">  │ │ └── two-sum@1.0.0 </tspan>
+<tspan x="10" y="7882">  │ ├── robust-subtract@1.0.0 </tspan>
+<tspan x="10" y="7898">  │ ├── robust-sum@1.0.0 </tspan>
+<tspan x="10" y="7914">  │ └── two-product@1.0.2 </tspan>
+<tspan x="10" y="7930">  ├── sane-topojson@2.0.0 </tspan>
+<tspan x="10" y="7946">  ├── superscript-text@1.0.0 </tspan>
+<tspan x="10" y="7962">  ├── tinycolor2@1.4.1 </tspan>
+<tspan x="10" y="7978">  ├─┬ topojson-client@2.1.0 </tspan>
+<tspan x="10" y="7994">  │ └── commander@2.1.0 </tspan>
+<tspan x="10" y="8010">  ├─┬ webgl-context@2.2.0 </tspan>
+<tspan x="10" y="8026">  │ └── get-canvas-context@1.0.2 </tspan>
+<tspan x="10" y="8042">  └─┬ world-calendars@1.0.3 </tspan>
+<tspan x="10" y="8058">    └── object-assign@4.1.1</tspan>
+</text>
+</svg>

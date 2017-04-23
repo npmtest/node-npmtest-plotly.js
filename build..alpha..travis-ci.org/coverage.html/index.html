@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for All files</title>
+    <meta charset="utf-8">
+    <style>
+        body, html {
+            margin:0; padding: 0;
+        }
+        body {
+            font-family: Arial, Helvetica;
+            font-size: 10pt;
+        }
+        div.header, div.footer {
+            background: #eee;
+            padding: 1em;
+        }
+        div.header {
+            height: 160px;
+            padding: 0 1em 0 1em;
+            z-index: 100;
+            position: fixed;
+            top: 0;
+            border-bottom: 1px solid #666;
+            width: 100%;
+        }
+        div.footer {
+            border-top: 1px solid #666;
+        }
+        div.body {
+            margin-top: 170px;
+        }
+        div.meta {
+            font-size: 90%;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            font-weight: normal;
+        }
+        h1 {
+            font-size: 12pt;
+        }
+        h2 {
+            font-size: 10pt;
+        }
+        pre {
+            font-family: Menlo, Monaco, Consolas, Courier New, monospace;
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            tab-size: 2;
+        }
+
+        div.path { font-size: 110%; }
+        div.path a:link, div.path a:visited { color: #000; }
+        table.coverage { border-collapse: collapse; margin:0; padding: 0 }
+
+        table.coverage td {
+            margin: 0;
+            padding: 0;
+            color: #111;
+            vertical-align: top;
+        }
+        table.coverage td.line-count {
+            width: 50px;
+            text-align: right;
+            padding-right: 5px;
+        }
+        table.coverage td.line-coverage {
+            color: #777 !important;
+            text-align: right;
+            border-left: 1px solid #666;
+            border-right: 1px solid #666;
+        }
+
+        table.coverage td.text {
+        }
+
+        table.coverage td span.cline-any {
+            display: inline-block;
+            padding: 0 5px;
+            width: 40px;
+        }
+        table.coverage td span.cline-neutral {
+            background: #eee;
+        }
+        table.coverage td span.cline-yes {
+            background: #b5d592;
+            color: #999;
+        }
+        table.coverage td span.cline-no {
+            background: #fc8c84;
+        }
+
+        .cstat-yes { color: #111; }
+        .cstat-no { background: #fc8c84; color: #111; }
+        .fstat-no { background: #ffc520; color: #111 !important; }
+        .cbranch-no { background:  yellow !important; color: #111; }
+
+        .cstat-skip { background: #ddd; color: #111; }
+        .fstat-skip { background: #ddd; color: #111 !important; }
+        .cbranch-skip { background: #ddd !important; color: #111; }
+
+        .missing-if-branch {
+            display: inline-block;
+            margin-right: 10px;
+            position: relative;
+            padding: 0 4px;
+            background: black;
+            color: yellow;
+        }
+
+        .skip-if-branch {
+            display: none;
+            margin-right: 10px;
+            position: relative;
+            padding: 0 4px;
+            background: #ccc;
+            color: white;
+        }
+
+        .missing-if-branch .typ, .skip-if-branch .typ {
+            color: inherit !important;
+        }
+
+        .entity, .metric { font-weight: bold; }
+        .metric { display: inline-block; border: 1px solid #333; padding: 0.3em; background: white; }
+        .metric small { font-size: 80%; font-weight: normal; color: #666; }
+
+        div.coverage-summary table { border-collapse: collapse; margin: 3em; font-size: 110%; }
+        div.coverage-summary td, div.coverage-summary table  th { margin: 0; padding: 0.25em 1em; border-top: 1px solid #666; border-bottom: 1px solid #666; }
+        div.coverage-summary th { text-align: left; border: 1px solid #666; background: #eee; font-weight: normal; }
+        div.coverage-summary th.file { border-right: none !important; }
+        div.coverage-summary th.pic { border-left: none !important; text-align: right; }
+        div.coverage-summary th.pct { border-right: none !important; }
+        div.coverage-summary th.abs { border-left: none !important; text-align: right; }
+        div.coverage-summary td.pct { text-align: right; border-left: 1px solid #666; }
+        div.coverage-summary td.abs { text-align: right; font-size: 90%; color: #444; border-right: 1px solid #666; }
+        div.coverage-summary td.file { text-align: right; border-left: 1px solid #666; white-space: nowrap;  }
+        div.coverage-summary td.pic { min-width: 120px !important;  }
+        div.coverage-summary a:link { color: #000; }
+        div.coverage-summary a:visited { color: #333; }
+        div.coverage-summary tfoot td { border-top: 1px solid #666; }
+
+        div.coverage-summary .yui3-datatable-sort-indicator, div.coverage-summary .dummy-sort-indicator {
+            height: 10px;
+            width: 7px;
+            display: inline-block;
+            margin-left: 0.5em;
+        }
+        div.coverage-summary .yui3-datatable-sort-indicator {
+            background: no-repeat scroll 0 0 transparent;
+        }
+        div.coverage-summary .yui3-datatable-sorted .yui3-datatable-sort-indicator {
+            background-position: 0 -20px;
+        }
+        div.coverage-summary .yui3-datatable-sorted-desc .yui3-datatable-sort-indicator {
+            background-position: 0 -10px;
+        }
+
+        .high { background: #b5d592 !important; }
+        .medium { background: #ffe87c !important; }
+        .low { background: #fc8c84 !important; }
+
+        span.cover-fill, span.cover-empty {
+            display:inline-block;
+            border:1px solid #444;
+            background: white;
+            height: 12px;
+        }
+        span.cover-fill {
+            background: #ccc;
+            border-right: 1px solid #444;
+        }
+        span.cover-empty {
+            background: white;
+            border-left: none;
+        }
+        span.cover-full {
+            border-right: none !important;
+        }
+        pre.prettyprint {
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .com { color: #999 !important; }
+        .ignore-none { color: #999; font-weight: normal; }
+
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1 style="font-weight: bold;">
+        <a href="https://github.com/npmtest/node-npmtest-plotly.js">npmtest-plotly.js (v0.0.1)</a>
+    </h1>
+    <h1>Code coverage report for <span class="entity">All files</span></h1>
+    <h2>
+        
+        Statements: <span class="metric">14.3% <small>(2948 / 20613)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Branches: <span class="metric">1.65% <small>(182 / 11063)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Functions: <span class="metric">3.12% <small>(69 / 2211)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Lines: <span class="metric">15.37% <small>(2946 / 19164)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        Ignored: <span class="metric">26 statements, 1 function, 30 branches</span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"></div>
+</div>
+<div class="body">
+<div class="coverage-summary">
+<table>
+<thead>
+<tr>
+   <th data-col="file" data-fmt="html" data-html="true" class="file">File</th>
+   <th data-col="pic" data-type="number" data-fmt="html" data-html="true" class="pic"></th>
+   <th data-col="statements" data-type="number" data-fmt="pct" class="pct">Statements</th>
+   <th data-col="statements_raw" data-type="number" data-fmt="html" class="abs"></th>
+   <th data-col="branches" data-type="number" data-fmt="pct" class="pct">Branches</th>
+   <th data-col="branches_raw" data-type="number" data-fmt="html" class="abs"></th>
+   <th data-col="functions" data-type="number" data-fmt="pct" class="pct">Functions</th>
+   <th data-col="functions_raw" data-type="number" data-fmt="html" class="abs"></th>
+   <th data-col="lines" data-type="number" data-fmt="pct" class="pct">Lines</th>
+   <th data-col="lines_raw" data-type="number" data-fmt="html" class="abs"></th>
+</tr>
+</thead>
+<tbody><tr>
+	<td class="file high" data-value="node-npmtest-plotly.js/"><a href="node-npmtest-plotly.js/index.html">node-npmtest-plotly.js/</a></td>
+	<td data-value="100" class="pic high"><span class="cover-fill cover-full" style="width: 100px;"></span><span class="cover-empty" style="width:0px;"></span></td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="153" class="abs high">(153&nbsp;/&nbsp;153)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="126" class="abs high">(126&nbsp;/&nbsp;126)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="28" class="abs high">(28&nbsp;/&nbsp;28)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="153" class="abs high">(153&nbsp;/&nbsp;153)</td>
+	</tr>
+
+<tr>
+	<td class="file high" data-value="node-npmtest-plotly.js/node_modules/plotly.js/build/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/build/index.html">node-npmtest-plotly.js/node_modules/plotly.js/build/</a></td>
+	<td data-value="100" class="pic high"><span class="cover-fill cover-full" style="width: 100px;"></span><span class="cover-empty" style="width:0px;"></span></td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="6" class="abs high">(6&nbsp;/&nbsp;6)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="6" class="abs high">(6&nbsp;/&nbsp;6)</td>
+	</tr>
+
+<tr>
+	<td class="file medium" data-value="node-npmtest-plotly.js/node_modules/plotly.js/lib/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/lib/index.html">node-npmtest-plotly.js/node_modules/plotly.js/lib/</a></td>
+	<td data-value="67.86" class="pic medium"><span class="cover-fill" style="width: 67px;"></span><span class="cover-empty" style="width:33px;"></span></td>
+	<td data-value="67.86" class="pct medium">67.86%</td>
+	<td data-value="56" class="abs medium">(38&nbsp;/&nbsp;56)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="67.86" class="pct medium">67.86%</td>
+	<td data-value="56" class="abs medium">(38&nbsp;/&nbsp;56)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/</a></td>
+	<td data-value="27.03" class="pic low"><span class="cover-fill" style="width: 27px;"></span><span class="cover-empty" style="width:73px;"></span></td>
+	<td data-value="27.03" class="pct low">27.03%</td>
+	<td data-value="111" class="abs low">(30&nbsp;/&nbsp;111)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="34" class="abs low">(0&nbsp;/&nbsp;34)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="8" class="abs low">(0&nbsp;/&nbsp;8)</td>
+	<td data-value="28.04" class="pct low">28.04%</td>
+	<td data-value="107" class="abs low">(30&nbsp;/&nbsp;107)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/components/annotations/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/components/annotations/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/components/annotations/</a></td>
+	<td data-value="11.85" class="pic low"><span class="cover-fill" style="width: 11px;"></span><span class="cover-empty" style="width:89px;"></span></td>
+	<td data-value="11.85" class="pct low">11.85%</td>
+	<td data-value="481" class="abs low">(57&nbsp;/&nbsp;481)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="315" class="abs low">(0&nbsp;/&nbsp;315)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="36" class="abs low">(0&nbsp;/&nbsp;36)</td>
+	<td data-value="12.69" class="pct low">12.69%</td>
+	<td data-value="449" class="abs low">(57&nbsp;/&nbsp;449)</td>
+	</tr>
+
+<tr>
+	<td class="file medium" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/components/calendars/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/components/calendars/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/components/calendars/</a></td>
+	<td data-value="57.75" class="pic medium"><span class="cover-fill" style="width: 57px;"></span><span class="cover-empty" style="width:43px;"></span></td>
+	<td data-value="57.75" class="pct medium">57.75%</td>
+	<td data-value="71" class="abs medium">(41&nbsp;/&nbsp;71)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="13" class="abs low">(0&nbsp;/&nbsp;13)</td>
+	<td data-value="33.33" class="pct low">33.33%</td>
+	<td data-value="6" class="abs low">(2&nbsp;/&nbsp;6)</td>
+	<td data-value="60.29" class="pct medium">60.29%</td>
+	<td data-value="68" class="abs medium">(41&nbsp;/&nbsp;68)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/components/color/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/components/color/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/components/color/</a></td>
+	<td data-value="26.09" class="pic low"><span class="cover-fill" style="width: 26px;"></span><span class="cover-empty" style="width:74px;"></span></td>
+	<td data-value="26.09" class="pct low">26.09%</td>
+	<td data-value="92" class="abs low">(24&nbsp;/&nbsp;92)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="67" class="abs low">(0&nbsp;/&nbsp;67)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="10" class="abs low">(0&nbsp;/&nbsp;10)</td>
+	<td data-value="32.43" class="pct low">32.43%</td>
+	<td data-value="74" class="abs low">(24&nbsp;/&nbsp;74)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/components/colorbar/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/components/colorbar/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/components/colorbar/</a></td>
+	<td data-value="15.55" class="pic low"><span class="cover-fill" style="width: 15px;"></span><span class="cover-empty" style="width:85px;"></span></td>
+	<td data-value="15.55" class="pct low">15.55%</td>
+	<td data-value="238" class="abs low">(37&nbsp;/&nbsp;238)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="149" class="abs low">(0&nbsp;/&nbsp;149)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="26" class="abs low">(0&nbsp;/&nbsp;26)</td>
+	<td data-value="15.88" class="pct low">15.88%</td>
+	<td data-value="233" class="abs low">(37&nbsp;/&nbsp;233)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/components/colorscale/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/components/colorscale/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/components/colorscale/</a></td>
+	<td data-value="29.12" class="pic low"><span class="cover-fill" style="width: 29px;"></span><span class="cover-empty" style="width:71px;"></span></td>
+	<td data-value="29.12" class="pct low">29.12%</td>
+	<td data-value="182" class="abs low">(53&nbsp;/&nbsp;182)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="108" class="abs low">(0&nbsp;/&nbsp;108)</td>
+	<td data-value="6.25" class="pct low">6.25%</td>
+	<td data-value="16" class="abs low">(1&nbsp;/&nbsp;16)</td>
+	<td data-value="32.92" class="pct low">32.92%</td>
+	<td data-value="161" class="abs low">(53&nbsp;/&nbsp;161)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/components/dragelement/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/components/dragelement/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/components/dragelement/</a></td>
+	<td data-value="16.89" class="pic low"><span class="cover-fill" style="width: 16px;"></span><span class="cover-empty" style="width:84px;"></span></td>
+	<td data-value="16.89" class="pct low">16.89%</td>
+	<td data-value="148" class="abs low">(25&nbsp;/&nbsp;148)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="76" class="abs low">(0&nbsp;/&nbsp;76)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="10" class="abs low">(0&nbsp;/&nbsp;10)</td>
+	<td data-value="19.84" class="pct low">19.84%</td>
+	<td data-value="126" class="abs low">(25&nbsp;/&nbsp;126)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/components/drawing/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/components/drawing/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/components/drawing/</a></td>
+	<td data-value="17.13" class="pic low"><span class="cover-fill" style="width: 17px;"></span><span class="cover-empty" style="width:83px;"></span></td>
+	<td data-value="17.13" class="pct low">17.13%</td>
+	<td data-value="397" class="abs low">(68&nbsp;/&nbsp;397)</td>
+	<td data-value="1.6" class="pct low">1.6%</td>
+	<td data-value="250" class="abs low">(4&nbsp;/&nbsp;250)</td>
+	<td data-value="1.06" class="pct low">1.06%</td>
+	<td data-value="94" class="abs low">(1&nbsp;/&nbsp;94)</td>
+	<td data-value="18.13" class="pct low">18.13%</td>
+	<td data-value="375" class="abs low">(68&nbsp;/&nbsp;375)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/components/errorbars/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/components/errorbars/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/components/errorbars/</a></td>
+	<td data-value="16.06" class="pic low"><span class="cover-fill" style="width: 16px;"></span><span class="cover-empty" style="width:84px;"></span></td>
+	<td data-value="16.06" class="pct low">16.06%</td>
+	<td data-value="193" class="abs low">(31&nbsp;/&nbsp;193)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="150" class="abs low">(0&nbsp;/&nbsp;150)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">(0&nbsp;/&nbsp;22)</td>
+	<td data-value="17.42" class="pct low">17.42%</td>
+	<td data-value="178" class="abs low">(31&nbsp;/&nbsp;178)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/components/legend/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/components/legend/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/components/legend/</a></td>
+	<td data-value="21.31" class="pic low"><span class="cover-fill" style="width: 21px;"></span><span class="cover-empty" style="width:79px;"></span></td>
+	<td data-value="21.31" class="pct low">21.31%</td>
+	<td data-value="61" class="abs low">(13&nbsp;/&nbsp;61)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="46" class="abs low">(0&nbsp;/&nbsp;46)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="10" class="abs low">(0&nbsp;/&nbsp;10)</td>
+	<td data-value="22.41" class="pct low">22.41%</td>
+	<td data-value="58" class="abs low">(13&nbsp;/&nbsp;58)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/components/modebar/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/components/modebar/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/components/modebar/</a></td>
+	<td data-value="18.21" class="pic low"><span class="cover-fill" style="width: 18px;"></span><span class="cover-empty" style="width:82px;"></span></td>
+	<td data-value="18.21" class="pct low">18.21%</td>
+	<td data-value="390" class="abs low">(71&nbsp;/&nbsp;390)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="206" class="abs low">(0&nbsp;/&nbsp;206)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="38" class="abs low">(0&nbsp;/&nbsp;38)</td>
+	<td data-value="18.98" class="pct low">18.98%</td>
+	<td data-value="374" class="abs low">(71&nbsp;/&nbsp;374)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/components/rangeselector/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/components/rangeselector/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/components/rangeselector/</a></td>
+	<td data-value="16.67" class="pic low"><span class="cover-fill" style="width: 16px;"></span><span class="cover-empty" style="width:84px;"></span></td>
+	<td data-value="16.67" class="pct low">16.67%</td>
+	<td data-value="24" class="abs low">(4&nbsp;/&nbsp;24)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="4" class="abs low">(0&nbsp;/&nbsp;4)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="2" class="abs low">(0&nbsp;/&nbsp;2)</td>
+	<td data-value="16.67" class="pct low">16.67%</td>
+	<td data-value="24" class="abs low">(4&nbsp;/&nbsp;24)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/components/shapes/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/components/shapes/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/components/shapes/</a></td>
+	<td data-value="12.5" class="pic low"><span class="cover-fill" style="width: 12px;"></span><span class="cover-empty" style="width:88px;"></span></td>
+	<td data-value="12.5" class="pct low">12.5%</td>
+	<td data-value="48" class="abs low">(6&nbsp;/&nbsp;48)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="14" class="abs low">(0&nbsp;/&nbsp;14)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="2" class="abs low">(0&nbsp;/&nbsp;2)</td>
+	<td data-value="12.77" class="pct low">12.77%</td>
+	<td data-value="47" class="abs low">(6&nbsp;/&nbsp;47)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/components/titles/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/components/titles/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/components/titles/</a></td>
+	<td data-value="20.83" class="pic low"><span class="cover-fill" style="width: 20px;"></span><span class="cover-empty" style="width:80px;"></span></td>
+	<td data-value="20.83" class="pct low">20.83%</td>
+	<td data-value="72" class="abs low">(15&nbsp;/&nbsp;72)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="50" class="abs low">(0&nbsp;/&nbsp;50)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="11" class="abs low">(0&nbsp;/&nbsp;11)</td>
+	<td data-value="22.06" class="pct low">22.06%</td>
+	<td data-value="68" class="abs low">(15&nbsp;/&nbsp;68)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/components/updatemenus/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/components/updatemenus/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/components/updatemenus/</a></td>
+	<td data-value="10.9" class="pic low"><span class="cover-fill" style="width: 10px;"></span><span class="cover-empty" style="width:90px;"></span></td>
+	<td data-value="10.9" class="pct low">10.9%</td>
+	<td data-value="156" class="abs low">(17&nbsp;/&nbsp;156)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="76" class="abs low">(0&nbsp;/&nbsp;76)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="9" class="abs low">(0&nbsp;/&nbsp;9)</td>
+	<td data-value="11.04" class="pct low">11.04%</td>
+	<td data-value="154" class="abs low">(17&nbsp;/&nbsp;154)</td>
+	</tr>
+
+<tr>
+	<td class="file high" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/constants/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/constants/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/constants/</a></td>
+	<td data-value="100" class="pic high"><span class="cover-fill cover-full" style="width: 100px;"></span><span class="cover-empty" style="width:0px;"></span></td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="10" class="abs high">(10&nbsp;/&nbsp;10)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="10" class="abs high">(10&nbsp;/&nbsp;10)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/fonts/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/fonts/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/fonts/</a></td>
+	<td data-value="40" class="pic low"><span class="cover-fill" style="width: 40px;"></span><span class="cover-empty" style="width:60px;"></span></td>
+	<td data-value="40" class="pct low">40%</td>
+	<td data-value="5" class="abs low">(2&nbsp;/&nbsp;5)</td>
+	<td data-value="50" class="pct medium">50%</td>
+	<td data-value="2" class="abs medium">(1&nbsp;/&nbsp;2)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="40" class="pct low">40%</td>
+	<td data-value="5" class="abs low">(2&nbsp;/&nbsp;5)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/lib/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/lib/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/lib/</a></td>
+	<td data-value="20.58" class="pic low"><span class="cover-fill" style="width: 20px;"></span><span class="cover-empty" style="width:80px;"></span></td>
+	<td data-value="20.58" class="pct low">20.58%</td>
+	<td data-value="1817" class="abs low">(374&nbsp;/&nbsp;1817)</td>
+	<td data-value="3.76" class="pct low">3.76%</td>
+	<td data-value="1063" class="abs low">(40&nbsp;/&nbsp;1063)</td>
+	<td data-value="4.37" class="pct low">4.37%</td>
+	<td data-value="229" class="abs low">(10&nbsp;/&nbsp;229)</td>
+	<td data-value="23.06" class="pct low">23.06%</td>
+	<td data-value="1622" class="abs low">(374&nbsp;/&nbsp;1622)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/plot_api/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/plot_api/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/plot_api/</a></td>
+	<td data-value="8.34" class="pic low"><span class="cover-fill" style="width: 8px;"></span><span class="cover-empty" style="width:92px;"></span></td>
+	<td data-value="8.34" class="pct low">8.34%</td>
+	<td data-value="2145" class="abs low">(179&nbsp;/&nbsp;2145)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1511" class="abs low">(0&nbsp;/&nbsp;1511)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="178" class="abs low">(0&nbsp;/&nbsp;178)</td>
+	<td data-value="9.05" class="pct low">9.05%</td>
+	<td data-value="1977" class="abs low">(179&nbsp;/&nbsp;1977)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/plots/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/plots/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/plots/</a></td>
+	<td data-value="9.45" class="pic low"><span class="cover-fill" style="width: 9px;"></span><span class="cover-empty" style="width:91px;"></span></td>
+	<td data-value="9.45" class="pct low">9.45%</td>
+	<td data-value="1206" class="abs low">(114&nbsp;/&nbsp;1206)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="716" class="abs low">(0&nbsp;/&nbsp;716)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="100" class="abs low">(0&nbsp;/&nbsp;100)</td>
+	<td data-value="10.11" class="pct low">10.11%</td>
+	<td data-value="1128" class="abs low">(114&nbsp;/&nbsp;1128)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/plots/cartesian/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/plots/cartesian/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/plots/cartesian/</a></td>
+	<td data-value="10.36" class="pic low"><span class="cover-fill" style="width: 10px;"></span><span class="cover-empty" style="width:90px;"></span></td>
+	<td data-value="10.36" class="pct low">10.36%</td>
+	<td data-value="3339" class="abs low">(346&nbsp;/&nbsp;3339)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="2481" class="abs low">(0&nbsp;/&nbsp;2481)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="275" class="abs low">(0&nbsp;/&nbsp;275)</td>
+	<td data-value="11.44" class="pct low">11.44%</td>
+	<td data-value="3024" class="abs low">(346&nbsp;/&nbsp;3024)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/plots/geo/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/plots/geo/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/plots/geo/</a></td>
+	<td data-value="22.56" class="pic low"><span class="cover-fill" style="width: 22px;"></span><span class="cover-empty" style="width:78px;"></span></td>
+	<td data-value="22.56" class="pct low">22.56%</td>
+	<td data-value="727" class="abs low">(164&nbsp;/&nbsp;727)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="220" class="abs low">(0&nbsp;/&nbsp;220)</td>
+	<td data-value="2.63" class="pct low">2.63%</td>
+	<td data-value="152" class="abs low">(4&nbsp;/&nbsp;152)</td>
+	<td data-value="23.98" class="pct low">23.98%</td>
+	<td data-value="684" class="abs low">(164&nbsp;/&nbsp;684)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/plots/gl2d/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/plots/gl2d/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/plots/gl2d/</a></td>
+	<td data-value="5.13" class="pic low"><span class="cover-fill" style="width: 5px;"></span><span class="cover-empty" style="width:95px;"></span></td>
+	<td data-value="5.13" class="pct low">5.13%</td>
+	<td data-value="604" class="abs low">(31&nbsp;/&nbsp;604)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="238" class="abs low">(0&nbsp;/&nbsp;238)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="36" class="abs low">(0&nbsp;/&nbsp;36)</td>
+	<td data-value="5.45" class="pct low">5.45%</td>
+	<td data-value="569" class="abs low">(31&nbsp;/&nbsp;569)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/plots/gl3d/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/plots/gl3d/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/plots/gl3d/</a></td>
+	<td data-value="3.55" class="pic low"><span class="cover-fill" style="width: 3px;"></span><span class="cover-empty" style="width:97px;"></span></td>
+	<td data-value="3.55" class="pct low">3.55%</td>
+	<td data-value="423" class="abs low">(15&nbsp;/&nbsp;423)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="145" class="abs low">(0&nbsp;/&nbsp;145)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="29" class="abs low">(0&nbsp;/&nbsp;29)</td>
+	<td data-value="3.72" class="pct low">3.72%</td>
+	<td data-value="403" class="abs low">(15&nbsp;/&nbsp;403)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/plots/mapbox/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/plots/mapbox/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/plots/mapbox/</a></td>
+	<td data-value="7.21" class="pic low"><span class="cover-fill" style="width: 7px;"></span><span class="cover-empty" style="width:93px;"></span></td>
+	<td data-value="7.21" class="pct low">7.21%</td>
+	<td data-value="333" class="abs low">(24&nbsp;/&nbsp;333)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="80" class="abs low">(0&nbsp;/&nbsp;80)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="50" class="abs low">(0&nbsp;/&nbsp;50)</td>
+	<td data-value="7.52" class="pct low">7.52%</td>
+	<td data-value="319" class="abs low">(24&nbsp;/&nbsp;319)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/plots/polar/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/plots/polar/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/plots/polar/</a></td>
+	<td data-value="8.58" class="pic low"><span class="cover-fill" style="width: 8px;"></span><span class="cover-empty" style="width:92px;"></span></td>
+	<td data-value="8.58" class="pct low">8.58%</td>
+	<td data-value="886" class="abs low">(76&nbsp;/&nbsp;886)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="356" class="abs low">(0&nbsp;/&nbsp;356)</td>
+	<td data-value="0.54" class="pct low">0.54%</td>
+	<td data-value="185" class="abs low">(1&nbsp;/&nbsp;185)</td>
+	<td data-value="9.43" class="pct low">9.43%</td>
+	<td data-value="806" class="abs low">(76&nbsp;/&nbsp;806)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/plots/ternary/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/plots/ternary/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/plots/ternary/</a></td>
+	<td data-value="16.41" class="pic low"><span class="cover-fill" style="width: 16px;"></span><span class="cover-empty" style="width:84px;"></span></td>
+	<td data-value="16.41" class="pct low">16.41%</td>
+	<td data-value="262" class="abs low">(43&nbsp;/&nbsp;262)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="87" class="abs low">(0&nbsp;/&nbsp;87)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">(0&nbsp;/&nbsp;28)</td>
+	<td data-value="17.13" class="pct low">17.13%</td>
+	<td data-value="251" class="abs low">(43&nbsp;/&nbsp;251)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/snapshot/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/snapshot/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/snapshot/</a></td>
+	<td data-value="14.4" class="pic low"><span class="cover-fill" style="width: 14px;"></span><span class="cover-empty" style="width:86px;"></span></td>
+	<td data-value="14.4" class="pct low">14.4%</td>
+	<td data-value="250" class="abs low">(36&nbsp;/&nbsp;250)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="147" class="abs low">(0&nbsp;/&nbsp;147)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="25" class="abs low">(0&nbsp;/&nbsp;25)</td>
+	<td data-value="15.06" class="pct low">15.06%</td>
+	<td data-value="239" class="abs low">(36&nbsp;/&nbsp;239)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/bar/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/bar/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/bar/</a></td>
+	<td data-value="10.82" class="pic low"><span class="cover-fill" style="width: 10px;"></span><span class="cover-empty" style="width:90px;"></span></td>
+	<td data-value="10.82" class="pct low">10.82%</td>
+	<td data-value="388" class="abs low">(42&nbsp;/&nbsp;388)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="155" class="abs low">(0&nbsp;/&nbsp;155)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="33" class="abs low">(0&nbsp;/&nbsp;33)</td>
+	<td data-value="11.7" class="pct low">11.7%</td>
+	<td data-value="359" class="abs low">(42&nbsp;/&nbsp;359)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/box/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/box/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/box/</a></td>
+	<td data-value="14.29" class="pic low"><span class="cover-fill" style="width: 14px;"></span><span class="cover-empty" style="width:86px;"></span></td>
+	<td data-value="14.29" class="pct low">14.29%</td>
+	<td data-value="21" class="abs low">(3&nbsp;/&nbsp;21)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="14.29" class="pct low">14.29%</td>
+	<td data-value="21" class="abs low">(3&nbsp;/&nbsp;21)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/candlestick/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/candlestick/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/candlestick/</a></td>
+	<td data-value="26" class="pic low"><span class="cover-fill" style="width: 26px;"></span><span class="cover-empty" style="width:74px;"></span></td>
+	<td data-value="26" class="pct low">26%</td>
+	<td data-value="50" class="abs low">(13&nbsp;/&nbsp;50)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="10" class="abs low">(0&nbsp;/&nbsp;10)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="7" class="abs low">(0&nbsp;/&nbsp;7)</td>
+	<td data-value="26" class="pct low">26%</td>
+	<td data-value="50" class="abs low">(13&nbsp;/&nbsp;50)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/carpet/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/carpet/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/carpet/</a></td>
+	<td data-value="8.28" class="pic low"><span class="cover-fill" style="width: 8px;"></span><span class="cover-empty" style="width:92px;"></span></td>
+	<td data-value="8.28" class="pct low">8.28%</td>
+	<td data-value="1365" class="abs low">(113&nbsp;/&nbsp;1365)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="427" class="abs low">(0&nbsp;/&nbsp;427)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="96" class="abs low">(0&nbsp;/&nbsp;96)</td>
+	<td data-value="8.47" class="pct low">8.47%</td>
+	<td data-value="1334" class="abs low">(113&nbsp;/&nbsp;1334)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/choropleth/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/choropleth/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/choropleth/</a></td>
+	<td data-value="16" class="pic low"><span class="cover-fill" style="width: 16px;"></span><span class="cover-empty" style="width:84px;"></span></td>
+	<td data-value="16" class="pct low">16%</td>
+	<td data-value="25" class="abs low">(4&nbsp;/&nbsp;25)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">(0&nbsp;/&nbsp;1)</td>
+	<td data-value="16" class="pct low">16%</td>
+	<td data-value="25" class="abs low">(4&nbsp;/&nbsp;25)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/contour/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/contour/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/contour/</a></td>
+	<td data-value="12.5" class="pic low"><span class="cover-fill" style="width: 12px;"></span><span class="cover-empty" style="width:88px;"></span></td>
+	<td data-value="12.5" class="pct low">12.5%</td>
+	<td data-value="272" class="abs low">(34&nbsp;/&nbsp;272)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="187" class="abs low">(0&nbsp;/&nbsp;187)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="16" class="abs low">(0&nbsp;/&nbsp;16)</td>
+	<td data-value="13.65" class="pct low">13.65%</td>
+	<td data-value="249" class="abs low">(34&nbsp;/&nbsp;249)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/contourcarpet/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/contourcarpet/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/contourcarpet/</a></td>
+	<td data-value="15.87" class="pic low"><span class="cover-fill" style="width: 15px;"></span><span class="cover-empty" style="width:85px;"></span></td>
+	<td data-value="15.87" class="pct low">15.87%</td>
+	<td data-value="271" class="abs low">(43&nbsp;/&nbsp;271)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="108" class="abs low">(0&nbsp;/&nbsp;108)</td>
+	<td data-value="10" class="pct low">10%</td>
+	<td data-value="20" class="abs low">(2&nbsp;/&nbsp;20)</td>
+	<td data-value="16.35" class="pct low">16.35%</td>
+	<td data-value="263" class="abs low">(43&nbsp;/&nbsp;263)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/contourgl/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/contourgl/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/contourgl/</a></td>
+	<td data-value="16.67" class="pic low"><span class="cover-fill" style="width: 16px;"></span><span class="cover-empty" style="width:84px;"></span></td>
+	<td data-value="16.67" class="pct low">16.67%</td>
+	<td data-value="12" class="abs low">(2&nbsp;/&nbsp;12)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="16.67" class="pct low">16.67%</td>
+	<td data-value="12" class="abs low">(2&nbsp;/&nbsp;12)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/heatmap/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/heatmap/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/heatmap/</a></td>
+	<td data-value="11.23" class="pic low"><span class="cover-fill" style="width: 11px;"></span><span class="cover-empty" style="width:89px;"></span></td>
+	<td data-value="11.23" class="pct low">11.23%</td>
+	<td data-value="285" class="abs low">(32&nbsp;/&nbsp;285)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="156" class="abs low">(0&nbsp;/&nbsp;156)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="19" class="abs low">(0&nbsp;/&nbsp;19)</td>
+	<td data-value="12.65" class="pct low">12.65%</td>
+	<td data-value="253" class="abs low">(32&nbsp;/&nbsp;253)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/heatmapgl/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/heatmapgl/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/heatmapgl/</a></td>
+	<td data-value="13.04" class="pic low"><span class="cover-fill" style="width: 13px;"></span><span class="cover-empty" style="width:87px;"></span></td>
+	<td data-value="13.04" class="pct low">13.04%</td>
+	<td data-value="23" class="abs low">(3&nbsp;/&nbsp;23)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="13.04" class="pct low">13.04%</td>
+	<td data-value="23" class="abs low">(3&nbsp;/&nbsp;23)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/histogram/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/histogram/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/histogram/</a></td>
+	<td data-value="12.5" class="pic low"><span class="cover-fill" style="width: 12px;"></span><span class="cover-empty" style="width:88px;"></span></td>
+	<td data-value="12.5" class="pct low">12.5%</td>
+	<td data-value="120" class="abs low">(15&nbsp;/&nbsp;120)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="57" class="abs low">(0&nbsp;/&nbsp;57)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="16" class="abs low">(0&nbsp;/&nbsp;16)</td>
+	<td data-value="13.27" class="pct low">13.27%</td>
+	<td data-value="113" class="abs low">(15&nbsp;/&nbsp;113)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/histogram2d/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/histogram2d/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/histogram2d/</a></td>
+	<td data-value="17.65" class="pic low"><span class="cover-fill" style="width: 17px;"></span><span class="cover-empty" style="width:83px;"></span></td>
+	<td data-value="17.65" class="pct low">17.65%</td>
+	<td data-value="34" class="abs low">(6&nbsp;/&nbsp;34)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="10" class="abs low">(0&nbsp;/&nbsp;10)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">(0&nbsp;/&nbsp;1)</td>
+	<td data-value="18.18" class="pct low">18.18%</td>
+	<td data-value="33" class="abs low">(6&nbsp;/&nbsp;33)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/histogram2dcontour/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/histogram2dcontour/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/histogram2dcontour/</a></td>
+	<td data-value="15" class="pic low"><span class="cover-fill" style="width: 15px;"></span><span class="cover-empty" style="width:85px;"></span></td>
+	<td data-value="15" class="pct low">15%</td>
+	<td data-value="20" class="abs low">(3&nbsp;/&nbsp;20)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="15" class="pct low">15%</td>
+	<td data-value="20" class="abs low">(3&nbsp;/&nbsp;20)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/mesh3d/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/mesh3d/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/mesh3d/</a></td>
+	<td data-value="27.07" class="pic low"><span class="cover-fill" style="width: 27px;"></span><span class="cover-empty" style="width:73px;"></span></td>
+	<td data-value="27.07" class="pct low">27.07%</td>
+	<td data-value="133" class="abs low">(36&nbsp;/&nbsp;133)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="39" class="abs low">(0&nbsp;/&nbsp;39)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="20" class="abs low">(0&nbsp;/&nbsp;20)</td>
+	<td data-value="27.91" class="pct low">27.91%</td>
+	<td data-value="129" class="abs low">(36&nbsp;/&nbsp;129)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/ohlc/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/ohlc/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/ohlc/</a></td>
+	<td data-value="16.87" class="pic low"><span class="cover-fill" style="width: 16px;"></span><span class="cover-empty" style="width:84px;"></span></td>
+	<td data-value="16.87" class="pct low">16.87%</td>
+	<td data-value="83" class="abs low">(14&nbsp;/&nbsp;83)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="40" class="abs low">(0&nbsp;/&nbsp;40)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="10" class="abs low">(0&nbsp;/&nbsp;10)</td>
+	<td data-value="20.9" class="pct low">20.9%</td>
+	<td data-value="67" class="abs low">(14&nbsp;/&nbsp;67)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/parcoords/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/parcoords/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/parcoords/</a></td>
+	<td data-value="13.67" class="pic low"><span class="cover-fill" style="width: 13px;"></span><span class="cover-empty" style="width:87px;"></span></td>
+	<td data-value="13.67" class="pct low">13.67%</td>
+	<td data-value="622" class="abs low">(85&nbsp;/&nbsp;622)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="233" class="abs low">(0&nbsp;/&nbsp;233)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="133" class="abs low">(0&nbsp;/&nbsp;133)</td>
+	<td data-value="14.43" class="pct low">14.43%</td>
+	<td data-value="589" class="abs low">(85&nbsp;/&nbsp;589)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/pie/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/pie/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/pie/</a></td>
+	<td data-value="15.17" class="pic low"><span class="cover-fill" style="width: 15px;"></span><span class="cover-empty" style="width:85px;"></span></td>
+	<td data-value="15.17" class="pct low">15.17%</td>
+	<td data-value="468" class="abs low">(71&nbsp;/&nbsp;468)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="302" class="abs low">(0&nbsp;/&nbsp;302)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="40" class="abs low">(0&nbsp;/&nbsp;40)</td>
+	<td data-value="16.82" class="pct low">16.82%</td>
+	<td data-value="422" class="abs low">(71&nbsp;/&nbsp;422)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/pointcloud/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/pointcloud/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/pointcloud/</a></td>
+	<td data-value="23.08" class="pic low"><span class="cover-fill" style="width: 23px;"></span><span class="cover-empty" style="width:77px;"></span></td>
+	<td data-value="23.08" class="pct low">23.08%</td>
+	<td data-value="13" class="abs low">(3&nbsp;/&nbsp;13)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="23.08" class="pct low">23.08%</td>
+	<td data-value="13" class="abs low">(3&nbsp;/&nbsp;13)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scatter/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scatter/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scatter/</a></td>
+	<td data-value="19.67" class="pic low"><span class="cover-fill" style="width: 19px;"></span><span class="cover-empty" style="width:81px;"></span></td>
+	<td data-value="19.67" class="pct low">19.67%</td>
+	<td data-value="239" class="abs low">(47&nbsp;/&nbsp;239)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="192" class="abs low">(0&nbsp;/&nbsp;192)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="21" class="abs low">(0&nbsp;/&nbsp;21)</td>
+	<td data-value="21.08" class="pct low">21.08%</td>
+	<td data-value="223" class="abs low">(47&nbsp;/&nbsp;223)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scatter3d/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scatter3d/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scatter3d/</a></td>
+	<td data-value="12.17" class="pic low"><span class="cover-fill" style="width: 12px;"></span><span class="cover-empty" style="width:88px;"></span></td>
+	<td data-value="12.17" class="pct low">12.17%</td>
+	<td data-value="304" class="abs low">(37&nbsp;/&nbsp;304)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="129" class="abs low">(0&nbsp;/&nbsp;129)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="18" class="abs low">(0&nbsp;/&nbsp;18)</td>
+	<td data-value="12.94" class="pct low">12.94%</td>
+	<td data-value="286" class="abs low">(37&nbsp;/&nbsp;286)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scattercarpet/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scattercarpet/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scattercarpet/</a></td>
+	<td data-value="13.64" class="pic low"><span class="cover-fill" style="width: 13px;"></span><span class="cover-empty" style="width:87px;"></span></td>
+	<td data-value="13.64" class="pct low">13.64%</td>
+	<td data-value="22" class="abs low">(3&nbsp;/&nbsp;22)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="13.64" class="pct low">13.64%</td>
+	<td data-value="22" class="abs low">(3&nbsp;/&nbsp;22)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scattergeo/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scattergeo/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scattergeo/</a></td>
+	<td data-value="14.29" class="pic low"><span class="cover-fill" style="width: 14px;"></span><span class="cover-empty" style="width:86px;"></span></td>
+	<td data-value="14.29" class="pct low">14.29%</td>
+	<td data-value="21" class="abs low">(3&nbsp;/&nbsp;21)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="14.29" class="pct low">14.29%</td>
+	<td data-value="21" class="abs low">(3&nbsp;/&nbsp;21)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scattergl/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scattergl/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scattergl/</a></td>
+	<td data-value="15" class="pic low"><span class="cover-fill" style="width: 15px;"></span><span class="cover-empty" style="width:85px;"></span></td>
+	<td data-value="15" class="pct low">15%</td>
+	<td data-value="20" class="abs low">(3&nbsp;/&nbsp;20)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="15" class="pct low">15%</td>
+	<td data-value="20" class="abs low">(3&nbsp;/&nbsp;20)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scattermapbox/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scattermapbox/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scattermapbox/</a></td>
+	<td data-value="13.04" class="pic low"><span class="cover-fill" style="width: 13px;"></span><span class="cover-empty" style="width:87px;"></span></td>
+	<td data-value="13.04" class="pct low">13.04%</td>
+	<td data-value="23" class="abs low">(3&nbsp;/&nbsp;23)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="13.04" class="pct low">13.04%</td>
+	<td data-value="23" class="abs low">(3&nbsp;/&nbsp;23)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scatterternary/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scatterternary/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/scatterternary/</a></td>
+	<td data-value="13.04" class="pic low"><span class="cover-fill" style="width: 13px;"></span><span class="cover-empty" style="width:87px;"></span></td>
+	<td data-value="13.04" class="pct low">13.04%</td>
+	<td data-value="23" class="abs low">(3&nbsp;/&nbsp;23)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="13.04" class="pct low">13.04%</td>
+	<td data-value="23" class="abs low">(3&nbsp;/&nbsp;23)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/surface/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/traces/surface/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/traces/surface/</a></td>
+	<td data-value="20.31" class="pic low"><span class="cover-fill" style="width: 20px;"></span><span class="cover-empty" style="width:80px;"></span></td>
+	<td data-value="20.31" class="pct low">20.31%</td>
+	<td data-value="261" class="abs low">(53&nbsp;/&nbsp;261)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="81" class="abs low">(0&nbsp;/&nbsp;81)</td>
+	<td data-value="8" class="pct low">8%</td>
+	<td data-value="25" class="abs low">(2&nbsp;/&nbsp;25)</td>
+	<td data-value="20.62" class="pct low">20.62%</td>
+	<td data-value="257" class="abs low">(53&nbsp;/&nbsp;257)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/src/transforms/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/src/transforms/index.html">node-npmtest-plotly.js/node_modules/plotly.js/src/transforms/</a></td>
+	<td data-value="8.82" class="pic low"><span class="cover-fill" style="width: 8px;"></span><span class="cover-empty" style="width:92px;"></span></td>
+	<td data-value="8.82" class="pct low">8.82%</td>
+	<td data-value="170" class="abs low">(15&nbsp;/&nbsp;170)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="88" class="abs low">(0&nbsp;/&nbsp;88)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="33" class="abs low">(0&nbsp;/&nbsp;33)</td>
+	<td data-value="9.8" class="pct low">9.8%</td>
+	<td data-value="153" class="abs low">(15&nbsp;/&nbsp;153)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/tasks/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/tasks/index.html">node-npmtest-plotly.js/node_modules/plotly.js/tasks/</a></td>
+	<td data-value="33.18" class="pic low"><span class="cover-fill" style="width: 33px;"></span><span class="cover-empty" style="width:67px;"></span></td>
+	<td data-value="33.18" class="pct low">33.18%</td>
+	<td data-value="223" class="abs low">(74&nbsp;/&nbsp;223)</td>
+	<td data-value="4.35" class="pct low">4.35%</td>
+	<td data-value="46" class="abs low">(2&nbsp;/&nbsp;46)</td>
+	<td data-value="13.16" class="pct low">13.16%</td>
+	<td data-value="38" class="abs low">(5&nbsp;/&nbsp;38)</td>
+	<td data-value="34.26" class="pct low">34.26%</td>
+	<td data-value="216" class="abs low">(74&nbsp;/&nbsp;216)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-plotly.js/node_modules/plotly.js/tasks/util/"><a href="node-npmtest-plotly.js/node_modules/plotly.js/tasks/util/index.html">node-npmtest-plotly.js/node_modules/plotly.js/tasks/util/</a></td>
+	<td data-value="37.96" class="pic low"><span class="cover-fill" style="width: 37px;"></span><span class="cover-empty" style="width:63px;"></span></td>
+	<td data-value="37.96" class="pct low">37.96%</td>
+	<td data-value="216" class="abs low">(82&nbsp;/&nbsp;216)</td>
+	<td data-value="12.33" class="pct low">12.33%</td>
+	<td data-value="73" class="abs low">(9&nbsp;/&nbsp;73)</td>
+	<td data-value="26.53" class="pct low">26.53%</td>
+	<td data-value="49" class="abs low">(13&nbsp;/&nbsp;49)</td>
+	<td data-value="40.61" class="pct low">40.61%</td>
+	<td data-value="197" class="abs low">(80&nbsp;/&nbsp;197)</td>
+	</tr>
+
+</tbody>
+</table>
+</div></div>
+<div class="footer">
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Sun Apr 23 2017 05:50:33 GMT+0000 (UTC)</div>
+</div>
+</body>
+</html>
